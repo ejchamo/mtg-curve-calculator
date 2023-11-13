@@ -12,6 +12,7 @@ const RegistrationForm = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const [serverErrors, setServerErrors] = useState({});
 
   const [shouldRedirect, setShouldRedirect] = useState(false);
 
@@ -25,6 +26,13 @@ const RegistrationForm = () => {
       newErrors = {
         ...newErrors,
         email: "is invalid",
+      };
+    }
+
+    if (email.trim() == "") {
+      newErrors = {
+        ...newErrors,
+        email: "is required",
       };
     }
 
