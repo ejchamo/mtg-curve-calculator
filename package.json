@@ -1,0 +1,22 @@
+{
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "server",
+    "client",
+    "e2e"
+  ],
+  "scripts": {
+    "build:client": "yarn workspace mtg-curve-calculator-client build",
+    "dev": "yarn workspace mtg-curve-calculator-server dev",
+    "dev:debug": "yarn workspace mtg-curve-calculator-server dev:debug",
+    "heroku-postbuild": "yarn workspace mtg-curve-calculator-client build",
+    "start": "yarn workspace mtg-curve-calculator-server start",
+    "dev:cypress": "yarn workspace mtg-curve-calculator-server dev:e2e",
+    "e2e:open": "yarn workspace mtg-curve-calculator-e2e e2e:open",
+    "e2e:run": "yarn workspace mtg-curve-calculator-e2e e2e:run"
+  },
+  "engines": {
+    "node": "^16.18"
+  }
+}
