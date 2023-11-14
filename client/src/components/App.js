@@ -9,6 +9,7 @@ import SignInForm from "./authentication/SignInForm";
 import TopBar from "./layout/TopBar";
 import AuthenticatedRoute from "./authentication/AuthenticatedRoute";
 import UserProfile from "./profile/UserProfile";
+import DeckEditor from "./profile/deckEditor/DeckEditor";
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined);
@@ -41,6 +42,7 @@ const App = (props) => {
           user={currentUser}
           setCurrentUser={setCurrentUser}
         />
+        <Route exact path="/deckeditor" component={DeckEditor} />
       </Switch>
     </Router>
   );
