@@ -17,3 +17,33 @@
   display: flex;
   flex-direction: row;
 }
+
+.search-box {
+  background-color: purple;
+}
+
+.search-bar {
+  background-color: aqua;
+  height: 10vh;
+  margin: 2%;
+}
+
+.new-cards {
+  background-color: green;
+  height: 90vh;
+  margin: 2%;
+}
+
+.card-box {
+  background-color: pink;
+  text-align: center;
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.card-list {
+  background-color: lightblue;
+  text-align: left;
+}
