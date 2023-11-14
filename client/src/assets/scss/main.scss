@@ -18,22 +18,6 @@
   flex-direction: row;
 }
 
-.search-box {
-  background-color: purple;
-}
-
-.search-bar {
-  background-color: aqua;
-  height: 10vh;
-  margin: 2%;
-}
-
-.new-cards {
-  background-color: green;
-  height: 90vh;
-  margin: 2%;
-}
-
 .card-box {
   background-color: pink;
   text-align: center;
@@ -46,4 +30,33 @@
 .card-list {
   background-color: lightblue;
   text-align: left;
+}
+
+.search-box {
+  background-color: purple;
+}
+
+.search-bar {
+  background-color: orange;
+  display: flex;
+  height: 10vh;
+  margin: 10px;
+
+  .search-input {
+    border-radius: 50px;
+    margin: 10px;
+  }
+}
+
+.new-card-list {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  white-space: nowrap;
+  height: 80vh;
+}
+
+.new-card-tile {
+  margin-right: 10px;
+  margin-bottom: 10px;
 }

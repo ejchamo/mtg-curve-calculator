@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import SearchBar from "./SearchBar";
+import NewCardList from "./NewCardList";
 
-const SearchBox = () => {
+const SearchBox = (props) => {
+  const [newCards, setNewCards] = useState([]);
+
+  const { cards, setCards } = props;
+
   return (
     <>
-      <div className="search-bar">search bar</div>
-      <div className="new-cards"> new cards </div>
+      <SearchBar setNewCards={setNewCards} />
+      <NewCardList newCards={newCards} cards={cards} setCards={setCards} />
     </>
   );
 };

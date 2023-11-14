@@ -7,7 +7,7 @@ const CardTile = (props) => {
     cards.splice(index, 1);
     setCards([...cards]);
   };
-  return <div onClick={removeCard}> {card.name}</div>;
+  return <div onClick={removeCard}>{card.name}</div>;
 };
 
 export default CardTile;
