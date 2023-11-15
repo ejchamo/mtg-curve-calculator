@@ -19,17 +19,19 @@ const SearchBar = (props) => {
   };
 
   return (
-    <form className="search-bar" onSubmit={handleSearch}>
-      <input
-        className="search-input"
-        type="text"
-        name="search"
-        placeholder="Search for a card name..."
-        value={params}
-        onChange={handleInputChange}
-      />
-      <button type="submit">Search</button>
-    </form>
+    <>
+      <form className="search-bar" onSubmit={handleSearch}>
+        <input
+          className="search-input"
+          type="text"
+          name="search"
+          placeholder="Search for a card name..."
+          value={params}
+          onChange={handleInputChange}
+        />
+        <button type="submit">Search</button>
+      </form>
+    </>
   );
 };
 

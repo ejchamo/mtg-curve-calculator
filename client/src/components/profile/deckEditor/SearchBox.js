@@ -1,16 +1,25 @@
 import React, { useState } from "react";
 import SearchBar from "./SearchBar";
+import StatsButton from "./StatsButton";
 import NewCardList from "./NewCardList";
+import StatsList from "./StatsList";
 
 const SearchBox = (props) => {
-  const [newCards, setNewCards] = useState([]);
-
   const { cards, setCards } = props;
+
+  const [newCards, setNewCards] = useState([]);
+  const [showStats, setShowStats] = useState(false);
+
+  const newCardList = <NewCardList newCards={newCards} cards={cards} setCards={setCards} />;
+  const statsList = <StatsList cards={cards} />;
 
   return (
     <>
-      <SearchBar setNewCards={setNewCards} />
-      <NewCardList newCards={newCards} cards={cards} setCards={setCards} />
+      <div className="search-box-top">
+        <SearchBar setNewCards={setNewCards} />
+        <StatsButton showStats={showStats} setShowStats={setShowStats} />
+      </div>
+      {showStats ? statsList : newCardList}
     </>
   );
 };
