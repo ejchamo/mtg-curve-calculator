@@ -42,7 +42,12 @@ const App = (props) => {
           user={currentUser}
           setCurrentUser={setCurrentUser}
         />
-        <Route exact path="/deckeditor" component={DeckEditor} />
+        <AuthenticatedRoute
+          exact={true}
+          path="/deckeditor/:id"
+          component={DeckEditor}
+          user={currentUser}
+        />
       </Switch>
     </Router>
   );
