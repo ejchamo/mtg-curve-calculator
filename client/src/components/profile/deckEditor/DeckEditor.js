@@ -1,10 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CardList from "./CardList";
 import SearchBox from "./SearchBox";
+import getDeckById from "../../../services/getDeckById";
 
 const DeckEditor = (props) => {
-  const deck = props.location.state.deck;
-  const [cards, setCards] = useState(deck.cards.deck);
+  const [deck, setDeck] = useState({ id: "", name: "", cards: [], userId: "" });
+  const [cards, setCards] = useState([]);
+
+  useEffect(() => {
+    getDeckById(props.computedMatch.params.id).then((deckData) => {
+      setDeck(deckData);
+      setCards(deckData.cards.deck);
+    });
+  }, []);
 
   return (
     <div className="full-height grid-y medium-grid-frame">
