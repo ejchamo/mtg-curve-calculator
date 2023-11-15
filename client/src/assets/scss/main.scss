@@ -18,13 +18,13 @@
   flex-direction: row;
 }
 
+.full-height {
+  height: 100vh;
+}
+
 .card-box {
   background-color: pink;
   text-align: center;
-}
-
-.full-height {
-  height: 100vh;
 }
 
 .card-list {
@@ -34,6 +34,12 @@
 
 .search-box {
   background-color: purple;
+}
+
+.search-box-top {
+  background-color: lightgreen;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .search-bar {
@@ -50,6 +56,7 @@
 }
 
 .new-card-list {
+  background-color: aqua;
   display: flex;
   flex-wrap: wrap;
   overflow-x: auto;
