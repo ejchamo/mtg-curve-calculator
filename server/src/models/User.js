@@ -58,6 +58,11 @@ class User extends uniqueFunc(Model) {
       },
     };
   }
+
+  async getDeckCount() {
+    const deckCount = await this.$relatedQuery("decks").count("id");
+    return deckCount[0].count;
+  }
 }
 
 module.exports = User;
