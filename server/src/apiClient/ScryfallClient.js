@@ -12,6 +12,13 @@ class ScryfallClient {
 
     return serializedCards;
   }
+
+  static async getExactCard(name) {
+    const response = await got(`https://api.scryfall.com/cards/named?exact=${name}`);
+    const body = JSON.parse(response.body);
+    const serializedCard = CardSerializer.cleanCard(body);
+    return serializedCard;
+  }
 }
 
 export default ScryfallClient;
