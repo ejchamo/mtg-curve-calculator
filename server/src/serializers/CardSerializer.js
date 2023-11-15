@@ -1,22 +1,6 @@
 class CardSerializer {
   static cleanCards(cards) {
-    const allowedAttributes = [
-      "object",
-      "id",
-      "name",
-      "uri",
-      "scryfall_uri",
-      "image_uris",
-      "mana_cost",
-      "cmc",
-      "type_line",
-      "colors",
-      "color_identity",
-      "legalities",
-      "set",
-      "set_name",
-      "rarity",
-    ];
+    const allowedAttributes = ["object", "id", "name", "image_uris", "cmc"];
 
     const serializedCards = cards.map((card) => {
       const serializedCard = {};

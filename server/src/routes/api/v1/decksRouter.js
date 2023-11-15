@@ -29,4 +29,27 @@ decksRouter.get("/:id", async (req, res) => {
   }
 });
 
+decksRouter.patch("/:id", async (req, res) => {
+  const newDeck = req.body.newDeck;
+
+  const user = req.user;
+  const deckId = req.params.id;
+
+  const deck = await Deck.query().findById(deckId);
+  const deckUserId = deck.userId;
+
+  if (user.id === deckUserId) {
+    try {
+      const savedDeck = await deck.$query().patchAndFetch({
+        ...newDeck,
+      });
+      res.status(200).json({ savedDeck });
+    } catch (err) {
+      res.status(500).json({ errors: err });
+    }
+  } else {
+    res.status(400).json({ error: "not authorized to edit" });
+  }
+});
+
 export default decksRouter;

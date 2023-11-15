@@ -23,6 +23,7 @@ const SearchBar = (props) => {
       <input
         className="search-input"
         type="text"
+        name="search"
         placeholder="Search for a card name..."
         value={params}
         onChange={handleInputChange}

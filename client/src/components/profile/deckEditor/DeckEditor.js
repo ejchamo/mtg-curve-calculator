@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CardList from "./CardList";
 import SearchBox from "./SearchBox";
+import CardBox from "./CardBox";
 import getDeckById from "../../../services/getDeckById";
 
 const DeckEditor = (props) => {
@@ -22,8 +23,7 @@ const DeckEditor = (props) => {
             <SearchBox cards={cards} setCards={setCards} />
           </div>
           <div className="card-box cell medium-3 medium-cell-block-y">
-            <div>{deck.name}</div>
-            <CardList cards={cards} setCards={setCards} />
+            <CardBox deck={deck} setDeck={setDeck} cards={cards} setCards={setCards} />
           </div>
         </div>
       </div>
