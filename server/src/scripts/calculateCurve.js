@@ -45,6 +45,7 @@ function calculateCurve(deck, numSimulations) {
 
       if (turn < 6) {
         const newCard = shuffledDeck.shift();
+        hand.push(newCard);
         if (newCard.type_line.includes("Land")) {
           testObject.lands += 1;
         }
