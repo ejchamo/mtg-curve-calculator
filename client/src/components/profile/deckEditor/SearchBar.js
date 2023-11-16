@@ -14,6 +14,10 @@ const SearchBar = (props) => {
       if (response) {
         const returnedCards = response;
         props.setNewCards(returnedCards);
+        props.setSearchFailed(false);
+      } else {
+        props.setNewCards([]);
+        props.setSearchFailed(true);
       }
     });
   };
