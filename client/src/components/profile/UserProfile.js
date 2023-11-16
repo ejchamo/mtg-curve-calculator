@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import getDecks from "../../services/getDecks";
-import DeckTile from "./DeckTile";
 import ImportButton from "./ImportButton";
+import DeckList from "./DeckList";
+import DeckOptions from "./DeckOptions";
 
 const UserProfile = (props) => {
   const [decks, setDecks] = useState([]);
+  const [selectedDeck, setSelectedDeck] = useState(null);
 
   useEffect(() => {
     getDecks().then((response) => {
@@ -12,17 +14,19 @@ const UserProfile = (props) => {
     });
   }, []);
 
-  const deckTiles = decks.map((deck) => {
-    return <DeckTile key={deck.id} deck={deck} />;
-  });
-
   return (
     <>
-      <div className="profile-detail-container cell medium-6 medium-cell-block-y">
-        <h3 className="profile-showpage-email">{props.user.email}</h3>
+      <h3>{props.user.email}</h3>
+      <div className="profile-options">
+        <ImportButton decks={decks} setDecks={setDecks} />
+        <DeckOptions
+          selectedDeck={selectedDeck}
+          setSelectedDeck={setSelectedDeck}
+          decks={decks}
+          setDecks={setDecks}
+        />
       </div>
-      <ImportButton decks={decks} setDecks={setDecks} />
-      {deckTiles}
+      <DeckList decks={decks} selectedDeck={selectedDeck} setSelectedDeck={setSelectedDeck} />
     </>
   );
 };

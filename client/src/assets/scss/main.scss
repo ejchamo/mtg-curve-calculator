@@ -23,6 +23,8 @@ body {
   background-color: #5281af;
   color: #dee6ea;
   font-weight: bold;
+  align-items: center;
+  margin: 0;
 }
 
 .top-bar,
@@ -89,7 +91,8 @@ body {
   }
 }
 
-.stats-button {
+.stats-button,
+.delete-button {
   background-color: #123040;
   color: #dee6ea;
   font-weight: bold;
@@ -122,10 +125,44 @@ body {
 
 .new-card-tile {
   margin: 10px;
+  img {
+    height: 200px;
+    width: auto;
+  }
 }
 
 .save {
   background-color: #123040;
   border-radius: 50px;
   margin: 15px;
+}
+
+.deck-list {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  border-top: 1px solid #17313a;
+  height: 70vh;
+  margin: 10px;
+
+  .deck-tile {
+    text-align: center;
+    margin: 10px;
+
+    .deck-image {
+      height: 250px;
+      width: auto;
+    }
+  }
+
+  .selected-deck {
+    .deck-image {
+      height: 300px;
+    }
+  }
+}
+
+.profile-options {
+  display: flex;
+  align-items: center;
 }

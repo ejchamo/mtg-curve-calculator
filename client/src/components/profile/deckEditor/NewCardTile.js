@@ -11,7 +11,7 @@ const NewCardTile = (props) => {
   if (card.image_uris) {
     return (
       <div className="new-card-tile" onClick={addCard}>
-        <img src={`${card.image_uris.small}`} />
+        <img src={`${card.image_uris.normal}`} />
       </div>
     );
   } else {
