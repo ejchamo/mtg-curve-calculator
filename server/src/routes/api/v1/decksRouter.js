@@ -76,4 +76,23 @@ decksRouter.post("/import", async (req, res) => {
   }
 });
 
+decksRouter.delete("/:id", async (req, res) => {
+  const userId = req.user.id;
+  const deckId = req.params.id;
+
+  const deck = await Deck.query().findById(deckId);
+  const deckUserId = deck.userId;
+
+  if (userId === deckUserId) {
+    try {
+      const deletedDecks = await Deck.query().deleteById(deckId);
+      res.status(200).json({ deletedDecks });
+    } catch (error) {
+      res.status(500).json({ errors: error });
+    }
+  } else {
+    res.status(401).json({ warning: "not authorized to delete deck" });
+  }
+});
+
 export default decksRouter;
