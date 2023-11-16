@@ -11,7 +11,7 @@ const StatsTile = (props) => {
   }
 
   return (
-    <div>
+    <div className="stat-tile">
       turn {props.turn}
       {statBlocks}
     </div>

@@ -13,6 +13,24 @@
   tab-size: 4;
 }
 
+body {
+  background-color: #12202b;
+  color: #dee6ea;
+  font-weight: bold;
+}
+
+.button {
+  background-color: #5281af;
+  color: #dee6ea;
+  font-weight: bold;
+}
+
+.top-bar,
+.top-bar ul {
+  background-color: #152531;
+  border: 1px solid #17313a;
+}
+
 .menu-item {
   display: flex;
   flex-direction: row;
@@ -23,49 +41,91 @@
 }
 
 .card-box {
-  background-color: pink;
   text-align: center;
+  height: 70vh;
+  border-left: 1px solid #17313a;
 }
 
 .card-list {
-  background-color: lightblue;
   text-align: left;
-}
-
-.search-box {
-  background-color: purple;
+  overflow-x: auto;
+  height: 70vh;
+  .card-tile {
+    background-color: #152531;
+    border: 1px solid #17313a;
+    margin: 5px;
+  }
 }
 
 .search-box-top {
-  background-color: lightgreen;
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 .search-bar {
-  background-color: orange;
   display: flex;
   height: 10vh;
   margin: 10px;
   width: 75%;
+  position: relative;
+  align-items: center;
 
   .search-input {
     border-radius: 50px;
+    margin: auto 0;
+  }
+
+  .search-button {
+    border-radius: 50px;
+    right: 0px;
+    height: 30px;
+    width: 30px;
+    margin: 10px;
+    position: absolute;
+    background-color: #123040;
+    color: #dee6ea;
+    font-weight: bold;
+  }
+}
+
+.stats-button {
+  background-color: #123040;
+  color: #dee6ea;
+  font-weight: bold;
+  border-radius: 50px;
+  height: 35px;
+  padding: 0 25px;
+}
+
+.new-card-list {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  height: 70vh;
+  margin: 10px;
+  // background-color: #152531;
+  border-top: 1px solid #17313a;
+}
+
+.stats-list {
+  display: flex;
+  flex-wrap: wrap;
+  height: 70vh;
+  margin: 10px;
+  border-top: 1px solid #17313a;
+
+  .stat-tile {
     margin: 10px;
   }
 }
 
-.new-card-list {
-  background-color: aqua;
-  display: flex;
-  flex-wrap: wrap;
-  overflow-x: auto;
-  white-space: nowrap;
-  height: 80vh;
+.new-card-tile {
   margin: 10px;
 }
 
-.new-card-tile {
-  margin-right: 10px;
-  margin-bottom: 10px;
+.save {
+  background-color: #123040;
+  border-radius: 50px;
+  margin: 15px;
 }

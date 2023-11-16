@@ -20,8 +20,11 @@ const CardBox = (props) => {
 
   return (
     <>
-      <div onClick={saveAndExit}>Save & Exit</div>
+      <div className="save" onClick={saveAndExit}>
+        Save & Exit
+      </div>
       <div>{props.deck.name}</div>
+      <span>cards:</span>
       <CardList cards={props.cards} setCards={props.setCards} />
     </>
   );
