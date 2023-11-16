@@ -14,7 +14,11 @@ const StatsButton = (props) => {
     option = "Run Stats";
   }
 
-  return <button onClick={changeStats}>{option}</button>;
+  return (
+    <button className="stats-button" onClick={changeStats}>
+      {option}
+    </button>
+  );
 };
 
 export default StatsButton;

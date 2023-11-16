@@ -29,7 +29,9 @@ const SearchBar = (props) => {
           value={params}
           onChange={handleInputChange}
         />
-        <button type="submit">Search</button>
+        <button className="search-button" type="submit">
+          Go
+        </button>
       </form>
     </>
   );

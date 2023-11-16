@@ -17,7 +17,7 @@ const StatsList = (props) => {
     statsTiles.push(<StatsTile key={key} turn={key} stat={stats[key]} />);
   }
 
-  return <div>{statsTiles}</div>;
+  return <div className="stats-list">{statsTiles}</div>;
 };
 
 export default StatsList;

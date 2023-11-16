@@ -21,7 +21,7 @@ const DeckEditor = (props) => {
           <div className="search-box cell medium-9">
             <SearchBox cards={cards} setCards={setCards} />
           </div>
-          <div className="card-box cell medium-3 medium-cell-block-y">
+          <div className="card-box cell medium-3">
             <CardBox deck={deck} setDeck={setDeck} cards={cards} setCards={setCards} />
           </div>
         </div>
