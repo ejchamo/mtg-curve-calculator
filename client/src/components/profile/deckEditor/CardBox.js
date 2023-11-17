@@ -4,10 +4,11 @@ import CardList from "./CardList";
 import saveDeck from "../../../services/saveDeck";
 
 const CardBox = (props) => {
+  const { deck, cards, setCards } = props;
   const [shouldRedirect, setShouldRedirect] = useState(false);
 
   const saveAndExit = async () => {
-    const editedDeck = { ...props.deck, cards: { deck: props.cards } };
+    const editedDeck = { ...deck, cards: { deck: cards } };
     const response = await saveDeck(editedDeck);
     if (response.status === 200) {
       setShouldRedirect(true);
@@ -23,9 +24,9 @@ const CardBox = (props) => {
       <div className="save" onClick={saveAndExit}>
         Save & Exit
       </div>
-      <div>{props.deck.name}</div>
+      <div>{deck.name}</div>
       <span>cards:</span>
-      <CardList cards={props.cards} setCards={props.setCards} />
+      <CardList cards={cards} setCards={setCards} />
     </>
   );
 };

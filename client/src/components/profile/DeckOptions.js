@@ -23,7 +23,9 @@ const DeckOptions = (props) => {
   if (selectedDeck) {
     options = (
       <div className="deck-options">
-        <Link to={`/deckeditor/${selectedDeck}`}>Edit the deck</Link>
+        <Link className="edit-button" to={`/deckeditor/${selectedDeck}`}>
+          Edit Deck / Run Stats
+        </Link>
         <button className="delete-button" onClick={deleteOnClick}>
           DELETE
         </button>

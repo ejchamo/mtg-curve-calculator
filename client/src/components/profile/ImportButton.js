@@ -19,7 +19,7 @@ const ImportButton = (props) => {
 
   return (
     <>
-      <button className="button" onClick={handleCopy}>
+      <button className="button import" onClick={handleCopy}>
         IMPORT DECK FROM MTGA
       </button>
     </>
