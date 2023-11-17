@@ -57,6 +57,11 @@ body {
     border: 1px solid #17313a;
     margin: 5px;
   }
+  .card-tile:hover {
+    background-color: #152531;
+    border: 2px solid #d47559;
+    margin: 5px;
+  }
 }
 
 .search-box-top {
@@ -91,24 +96,44 @@ body {
   }
 }
 
-.stats-button,
-.delete-button {
-  background-color: #123040;
-  color: #dee6ea;
-  font-weight: bold;
-  border-radius: 50px;
-  height: 35px;
-  padding: 0 25px;
-}
-
 .new-card-list {
   display: flex;
   flex-wrap: wrap;
   overflow-x: auto;
   height: 70vh;
   margin: 10px;
-  // background-color: #152531;
   border-top: 1px solid #17313a;
+}
+
+.new-card-tile {
+  margin: 10px;
+  .new-card-image {
+    height: 225px;
+    width: auto;
+    border-radius: 15px;
+  }
+  .new-card-image:hover {
+    height: 400px;
+    z-index: 1;
+    // box-shadow: 5px 5px 5px #d47559;
+  }
+}
+
+.stats-button,
+.delete-button,
+.edit-button {
+  background-color: #123040;
+  color: #d47559;
+  font-weight: bold;
+  border-radius: 50px;
+  height: 35px;
+  padding: 0 25px;
+}
+
+.delete-button,
+.edit-button {
+  padding: 10px 25px;
+  margin: 0 30px;
 }
 
 .stats-list {
@@ -120,14 +145,6 @@ body {
 
   .stat-tile {
     margin: 10px;
-  }
-}
-
-.new-card-tile {
-  margin: 10px;
-  img {
-    height: 200px;
-    width: auto;
   }
 }
 
@@ -152,6 +169,7 @@ body {
     .deck-image {
       height: 250px;
       width: auto;
+      border-radius: 15px;
     }
   }
 
@@ -165,4 +183,8 @@ body {
 .profile-options {
   display: flex;
   align-items: center;
+}
+
+.deck-options {
+  margin: auto;
 }
