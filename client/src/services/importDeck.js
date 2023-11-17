@@ -7,8 +7,7 @@ const importDeck = async (deckText) => {
       }),
       body: JSON.stringify({ deckText }),
     });
-    const body = await response.json();
-    return body;
+    return response;
   } catch (error) {
     console.error(`Error in fetch: ${error.message}`);
   }
