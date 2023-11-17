@@ -57,7 +57,12 @@ function calculateCurve(deck, numSimulations) {
 
   for (const turn in results) {
     for (const playable in results[turn]) {
-      probabilities[turn][playable] /= numSimulations;
+      let probability = probabilities[turn][playable] / numSimulations;
+
+      probability *= 100;
+      probability = probability.toFixed(2);
+
+      probabilities[turn][playable] = probability;
     }
   }
   return probabilities;
