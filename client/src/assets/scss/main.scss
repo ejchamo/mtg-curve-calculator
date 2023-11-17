@@ -44,7 +44,7 @@ body {
 
 .card-box {
   text-align: center;
-  height: 70vh;
+  height: 80vh;
   border-left: 1px solid #17313a;
 }
 
@@ -115,7 +115,6 @@ body {
   .new-card-image:hover {
     height: 400px;
     z-index: 1;
-    // box-shadow: 5px 5px 5px #d47559;
   }
 }
 
@@ -142,9 +141,19 @@ body {
   height: 70vh;
   margin: 10px;
   border-top: 1px solid #17313a;
+  justify-content: space-between;
 
   .stat-tile {
     margin: 10px;
+
+    .turn {
+      color: #d47559;
+      font-weight: bolder;
+    }
+
+    .stat-block {
+      margin-bottom: 10px;
+    }
   }
 }
 
@@ -152,6 +161,7 @@ body {
   background-color: #123040;
   border-radius: 50px;
   margin: 15px;
+  padding: 9px 0;
 }
 
 .deck-list {
@@ -175,7 +185,8 @@ body {
 
   .selected-deck {
     .deck-image {
-      height: 300px;
+      height: 400px;
+      box-shadow: #5281af;
     }
   }
 }

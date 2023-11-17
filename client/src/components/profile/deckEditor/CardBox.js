@@ -25,7 +25,7 @@ const CardBox = (props) => {
         Save & Exit
       </div>
       <div>{deck.name}</div>
-      <span>cards:</span>
+      <span>cards : {cards.length}</span>
       <CardList cards={cards} setCards={setCards} />
     </>
   );

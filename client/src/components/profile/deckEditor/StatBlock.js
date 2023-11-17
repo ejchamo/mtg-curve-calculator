@@ -4,8 +4,8 @@ const StatBlock = (props) => {
   const { cardType, cardStats } = props;
 
   return (
-    <div>
-      {cardType} : {cardStats}
+    <div className="stat-block">
+      {cardType} : {cardStats}%
     </div>
   );
 };
