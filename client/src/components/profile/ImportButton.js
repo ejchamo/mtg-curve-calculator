@@ -5,6 +5,7 @@ const ImportButton = (props) => {
   const { decks, setDecks, setSelectedDeck, importSuccess, setImportSuccess } = props;
 
   const handleCopy = async () => {
+    setImportSuccess(undefined);
     try {
       const clipboardText = await navigator.clipboard.readText();
       const response = await importDeck(clipboardText);
@@ -27,6 +28,8 @@ const ImportButton = (props) => {
 
   if (importSuccess) {
     importStatus = <div className="import-status"> import successfully loaded</div>;
+  } else if (importSuccess === undefined) {
+    importStatus = <span className="loader"></span>;
   } else if (importSuccess === false) {
     importStatus = (
       <div className="import-status"> import failed, the import must be from a MTGA export</div>
