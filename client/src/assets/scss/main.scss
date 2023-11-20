@@ -120,7 +120,8 @@ body {
 
 .stats-button,
 .delete-button,
-.edit-button {
+.edit-button,
+.export-button {
   background-color: #123040;
   color: #d47559;
   font-weight: bold;
@@ -130,7 +131,8 @@ body {
 }
 
 .delete-button,
-.edit-button {
+.edit-button,
+.export-button {
   padding: 10px 25px;
   margin: 0 30px;
 }
@@ -206,4 +208,24 @@ body {
 
 label {
   color: #dee6ea;
+}
+
+.loader {
+  width: 35px;
+  height: 35px;
+  border: 5px solid #fff;
+  border-bottom-color: #ff3d00;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

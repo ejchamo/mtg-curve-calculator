@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import importDeck from "../../services/importDeck";
 
 const ImportButton = (props) => {
-  const { decks, setDecks } = props;
-  const [importSuccess, setImportSuccess] = useState(null);
+  const { decks, setDecks, setSelectedDeck, importSuccess, setImportSuccess } = props;
 
   const handleCopy = async () => {
+    setImportSuccess(undefined);
     try {
       const clipboardText = await navigator.clipboard.readText();
       const response = await importDeck(clipboardText);
@@ -14,8 +14,10 @@ const ImportButton = (props) => {
         const newDeck = body.newDeck;
         setDecks([...decks, newDeck]);
         setImportSuccess(true);
+        setSelectedDeck(null);
       } else {
         setImportSuccess(false);
+        setSelectedDeck(null);
       }
     } catch (error) {
       console.error("Error copying text to clipboard:", error);
@@ -26,6 +28,8 @@ const ImportButton = (props) => {
 
   if (importSuccess) {
     importStatus = <div className="import-status"> import successfully loaded</div>;
+  } else if (importSuccess === undefined) {
+    importStatus = <span className="loader"></span>;
   } else if (importSuccess === false) {
     importStatus = (
       <div className="import-status"> import failed, the import must be from a MTGA export</div>

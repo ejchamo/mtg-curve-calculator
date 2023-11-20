@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import DeckTile from "./DeckTile";
 
 const DeckList = (props) => {
-  const { selectedDeck, setSelectedDeck } = props;
+  const { selectedDeck, setSelectedDeck, importSuccess, setImportSuccess } = props;
 
   const deckTiles = props.decks.map((deck) => {
     return (
@@ -11,6 +11,7 @@ const DeckList = (props) => {
         deck={deck}
         selectedDeck={selectedDeck}
         setSelectedDeck={setSelectedDeck}
+        setImportSuccess={setImportSuccess}
       />
     );
   });
