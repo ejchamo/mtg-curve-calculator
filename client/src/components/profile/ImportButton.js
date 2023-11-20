@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import importDeck from "../../services/importDeck";
 
 const ImportButton = (props) => {
-  const { decks, setDecks } = props;
-  const [importSuccess, setImportSuccess] = useState(null);
+  const { decks, setDecks, setSelectedDeck, importSuccess, setImportSuccess } = props;
 
   const handleCopy = async () => {
     try {
@@ -14,8 +13,10 @@ const ImportButton = (props) => {
         const newDeck = body.newDeck;
         setDecks([...decks, newDeck]);
         setImportSuccess(true);
+        setSelectedDeck(null);
       } else {
         setImportSuccess(false);
+        setSelectedDeck(null);
       }
     } catch (error) {
       console.error("Error copying text to clipboard:", error);

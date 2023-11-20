@@ -7,6 +7,7 @@ import DeckOptions from "./DeckOptions";
 const UserProfile = (props) => {
   const [decks, setDecks] = useState([]);
   const [selectedDeck, setSelectedDeck] = useState(null);
+  const [importSuccess, setImportSuccess] = useState(null);
 
   useEffect(() => {
     getDecks().then((response) => {
@@ -18,7 +19,13 @@ const UserProfile = (props) => {
     <>
       <h3>{props.user.email}</h3>
       <div className="profile-options">
-        <ImportButton decks={decks} setDecks={setDecks} />
+        <ImportButton
+          decks={decks}
+          setDecks={setDecks}
+          setSelectedDeck={setSelectedDeck}
+          importSuccess={importSuccess}
+          setImportSuccess={setImportSuccess}
+        />
         <DeckOptions
           selectedDeck={selectedDeck}
           setSelectedDeck={setSelectedDeck}
@@ -26,7 +33,12 @@ const UserProfile = (props) => {
           setDecks={setDecks}
         />
       </div>
-      <DeckList decks={decks} selectedDeck={selectedDeck} setSelectedDeck={setSelectedDeck} />
+      <DeckList
+        decks={decks}
+        selectedDeck={selectedDeck}
+        setSelectedDeck={setSelectedDeck}
+        setImportSuccess={setImportSuccess}
+      />
     </>
   );
 };

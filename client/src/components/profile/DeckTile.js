@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const DeckTile = (props) => {
-  const { deck, selectedDeck, setSelectedDeck } = props;
+  const { deck, selectedDeck, setSelectedDeck, setImportSuccess } = props;
 
   let selectedStatus;
 
@@ -12,6 +12,7 @@ const DeckTile = (props) => {
 
   const select = () => {
     setSelectedDeck(deck.id);
+    setImportSuccess(null);
   };
 
   return (
