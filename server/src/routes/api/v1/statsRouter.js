@@ -6,7 +6,7 @@ const statsRouter = new express.Router();
 statsRouter.post("/", (req, res) => {
   const { deck } = req.body;
 
-  const stats = calculateCurve(deck, 1000);
+  const stats = calculateCurve(deck, 10000);
 
   try {
     res.status(200).json({ stats });
