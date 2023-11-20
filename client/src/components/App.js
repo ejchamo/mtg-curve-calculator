@@ -37,7 +37,7 @@ const App = (props) => {
         <Route exact path="/user-sessions/new" component={SignInForm} />
         <AuthenticatedRoute
           exact={true}
-          path="/profile"
+          path={["/profile", "/user-sessions/profile"]}
           component={UserProfile}
           user={currentUser}
           setCurrentUser={setCurrentUser}
