@@ -129,6 +129,12 @@ body {
   height: 35px;
   padding: 0 25px;
 }
+.stats-button:hover,
+.delete-button:hover,
+.edit-button:hover,
+.export-button:hover {
+  color: #5281af;
+}
 
 .delete-button,
 .edit-button,
