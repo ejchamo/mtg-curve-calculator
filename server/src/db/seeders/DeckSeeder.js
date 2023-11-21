@@ -4,17 +4,17 @@ import testDeck2 from "./testDeckData/testDeck2.js";
 
 class DeckSeeder {
   static async seed() {
-    const testUser = await User.query().findOne({ email: "test@gmail.com" });
+    const testUser = await User.query().findOne({ email: "example.user@gmail.com" });
 
     const decksData = [
       {
         userId: testUser.id,
-        name: "test green deck",
+        name: "Sultai Midrange",
         cards: testDeck1,
       },
       {
         userId: testUser.id,
-        name: "test green deck 2",
+        name: "Aggro Dinos",
         cards: testDeck2,
       },
     ];

@@ -17,7 +17,7 @@ const UserProfile = (props) => {
 
   return (
     <>
-      <h3>{props.user.email}</h3>
+      <h3 className="profile-name">{props.user.email}</h3>
       <div className="profile-options">
         <ImportButton
           decks={decks}

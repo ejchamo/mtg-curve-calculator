@@ -27,6 +27,10 @@ body {
   margin: 0;
 }
 
+.import {
+  margin-left: 10px;
+}
+
 .top-bar,
 .top-bar ul {
   background-color: #152531;
@@ -129,6 +133,12 @@ body {
   height: 35px;
   padding: 0 25px;
 }
+.stats-button:hover,
+.delete-button:hover,
+.edit-button:hover,
+.export-button:hover {
+  color: #5281af;
+}
 
 .delete-button,
 .edit-button,
@@ -227,5 +237,76 @@ label {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+.home-container {
+  margin: 10px 25px;
+  padding: 10px;
+  display: block;
+  align-items: center;
+}
+
+.profile-name {
+  margin-left: 10px;
+}
+
+.welcome-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+
+  h2 {
+    color: #d47559;
+  }
+
+  p {
+    color: #88a0a7;
+  }
+}
+
+.profile-box {
+  height: 400px;
+  display: flex;
+  align-items: center;
+
+  .profile-image {
+    height: 275px;
+    transform: scale(1.05) perspective(2910px) rotateY(12deg) rotateX(3deg) rotate(-2deg);
+    border: 1px solid #17313a;
+    box-shadow: -20px 20px 60px #0a1a23;
+    margin: 10px;
+  }
+
+  .profile-explanation {
+    text-align: center;
+
+    p {
+      color: #88a0a7;
+    }
+  }
+}
+
+.deckeditor-box {
+  height: 400px;
+  display: flex;
+  align-items: center;
+
+  .stats-image {
+    height: 300px;
+    transform: scale(1.05) perspective(2910px) rotateY(-12deg) rotateX(-3deg) rotate(2deg);
+    border: 1px solid #17313a;
+    box-shadow: -20px 20px 60px #0a1a23;
+    margin: 30px;
+  }
+
+  .stats-explanation {
+    text-align: center;
+
+    p {
+      color: #88a0a7;
+    }
   }
 }
