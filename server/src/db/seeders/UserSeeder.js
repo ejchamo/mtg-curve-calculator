@@ -4,7 +4,7 @@ class UserSeeder {
   static async seed() {
     const usersData = [
       {
-        email: "test@gmail.com",
+        email: "example.user@gmail.com",
         password: "test",
       },
     ];
