@@ -310,3 +310,15 @@ label {
     }
   }
 }
+
+.edit-icon {
+  margin-right: 10px;
+}
+
+.edit-icon:hover {
+  transform: scale(1.1);
+}
+
+.new-name {
+  transform: scale(0.75);
+}

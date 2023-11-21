@@ -2,10 +2,31 @@ import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import CardList from "./CardList";
 import saveDeck from "../../../services/saveDeck";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPencil } from "@fortawesome/free-solid-svg-icons";
+import DeckNameForm from "./DeckNameForm";
 
 const CardBox = (props) => {
-  const { deck, cards, setCards } = props;
+  const { deck, setDeck, cards, setCards } = props;
+  const [editingName, setEditingName] = useState(false);
   const [shouldRedirect, setShouldRedirect] = useState(false);
+
+  let deckName = (
+    <div>
+      <FontAwesomeIcon
+        icon={faPencil}
+        className="edit-icon"
+        style={{ color: "#ffffff" }}
+        onClick={() => {
+          setEditingName(true);
+        }}
+      />
+      {deck.name}
+    </div>
+  );
+  if (editingName) {
+    deckName = <DeckNameForm deck={deck} setDeck={setDeck} setEditingName={setEditingName} />;
+  }
 
   const saveAndExit = async () => {
     const editedDeck = { ...deck, cards: { deck: cards } };
@@ -24,7 +45,7 @@ const CardBox = (props) => {
       <div className="save" onClick={saveAndExit}>
         Save & Exit
       </div>
-      <div>{deck.name}</div>
+      {deckName}
       <span>cards : {cards.length}</span>
       <CardList cards={cards} setCards={setCards} />
     </>
