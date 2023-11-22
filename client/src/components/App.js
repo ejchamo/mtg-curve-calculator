@@ -10,7 +10,7 @@ import TopBar from "./layout/TopBar";
 import AuthenticatedRoute from "./authentication/AuthenticatedRoute";
 import UserProfile from "./profile/UserProfile";
 import DeckEditor from "./profile/deckEditor/DeckEditor";
-import Home from "./homepage/Home";
+import Home from "./homepage/Home.tsx";
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined);

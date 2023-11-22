@@ -8,9 +8,11 @@
     // "rootDir": "src",
     "skipLibCheck": true,
     "strict": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
     "target": "es5",
     "types": ["jest", "react"]
   },
-  "include": ["src/**/*", "test/**/*"],
+  "include": ["src/**/*", "test/**/*", "typings/custom/import-png.d.ts"],
   "exclude": ["node_modules", "client/node_modules/"]
 }
