@@ -35,7 +35,15 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js)$/,
+        test: /\.tsx?$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: "ts-loader",
+        options: {
+          transpileOnly: true,
+        },
+      },
+      {
+        test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
         loader: "babel-loader",
         options: { presets: ["@babel/env"], cwd: path.resolve(__dirname) },
@@ -87,7 +95,7 @@ module.exports = {
       "@Components": path.resolve(__dirname, "src/components/"),
       "@Providers": path.resolve(__dirname, "src/providers/"),
     },
-    extensions: ["*", ".js", ".scss"],
+    extensions: ["*", ".js", ".scss", "ts", "tsx"],
   },
   output: {
     path: path.resolve(__dirname, "../server/public/dist"),
