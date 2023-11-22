@@ -1,7 +1,7 @@
 import React from "react";
-import WelcomeBox from "./WelcomeBox";
-import ProfileBox from "./ProfileBox";
-import DeckEditorBox from "./DeckEditorBox";
+import WelcomeBox from "./WelcomeBox.tsx";
+import ProfileBox from "./ProfileBox.tsx";
+import DeckEditorBox from "./DeckEditorBox.tsx";
 
 const Home = () => {
   return (
