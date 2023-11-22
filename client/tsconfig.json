@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "lib": ["dom", "DOM.Iterable", "esnext"],
+    "outDir": "dist",
+    // "rootDir": "src",
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "es5",
+    "types": ["jest", "react"]
+  },
+  "include": ["src/**/*", "test/**/*"],
+  "exclude": ["node_modules", "client/node_modules/"]
+}
