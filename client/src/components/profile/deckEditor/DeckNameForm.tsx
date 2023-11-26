@@ -1,15 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, Dispatch } from "react";
+import { DeckType } from "../../../../typings/custom/deck";
 
-const DeckNameForm = (props) => {
-  const { deck, setDeck, setEditingName } = props;
+interface props {
+  deck: DeckType;
+  setDeck: Dispatch<DeckType>;
+  setEditingName: (status: boolean) => void;
+}
+
+const DeckNameForm: React.FC<props> = ({ deck, setDeck, setEditingName }) => {
   const [newName, setNewName] = useState("");
 
-  const handleInputChange = (event) => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setNewName(event.currentTarget.value);
   };
 
   const changeName = () => {
-    event.preventDefault();
     setDeck({ ...deck, name: newName });
     setEditingName(false);
   };

@@ -4,7 +4,7 @@ import CardList from "./CardList.tsx";
 import saveDeck from "../../../services/saveDeck";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencil } from "@fortawesome/free-solid-svg-icons";
-import DeckNameForm from "./DeckNameForm";
+import DeckNameForm from "./DeckNameForm.tsx";
 
 const CardBox = (props) => {
   const { deck, setDeck, cards, setCards } = props;
