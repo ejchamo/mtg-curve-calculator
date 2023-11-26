@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SearchBox from "./SearchBox";
+import SearchBox from "./SearchBox.tsx";
 import CardBox from "./CardBox.tsx";
 import getDeckById from "../../../services/getDeckById";
 
