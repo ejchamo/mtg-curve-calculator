@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SearchBar from "./SearchBar";
 import StatsButton from "./StatsButton";
-import NewCardList from "./NewCardList";
+import NewCardList from "./NewCardList.tsx";
 import StatsList from "./StatsList";
 
 const SearchBox = (props) => {
