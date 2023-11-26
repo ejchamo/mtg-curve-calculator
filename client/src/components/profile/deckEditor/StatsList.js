@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import getStats from "../../../services/getStats";
-import StatsTile from "./StatsTile";
+import StatsTile from "./StatsTile.tsx";
 
 const StatsList = (props) => {
   const [stats, setStats] = useState({});
