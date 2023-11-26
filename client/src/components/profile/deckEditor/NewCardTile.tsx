@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, Dispatch } from "react";
+import { CardType } from "../../../../typings/custom/card";
 
-const NewCardTile = (props) => {
-  const { card, cards, setCards } = props;
+interface props {
+  card: CardType;
+  cards: CardType[];
+  setCards: Dispatch<CardType[]>;
+}
 
+const NewCardTile: React.FC<props> = ({ card, cards, setCards }) => {
   const [hovered, setHovered] = useState(false);
 
   let hoverClass = "";
@@ -18,12 +23,7 @@ const NewCardTile = (props) => {
   if (card.image_uris) {
     return (
       <div className="new-card-tile" onClick={addCard}>
-        <img
-          className={`new-card-image ${hoverClass}`}
-          src={`${card.image_uris.normal}`}
-          // onMouseEnter={() => setHovered(true)}
-          // onMouseLeave={() => setHovered(false)}
-        />
+        <img className={`new-card-image ${hoverClass}`} src={`${card.image_uris.normal}`} />
       </div>
     );
   } else {

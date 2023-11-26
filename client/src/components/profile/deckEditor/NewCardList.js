@@ -1,5 +1,5 @@
 import React from "react";
-import NewCardTile from "./NewCardTile";
+import NewCardTile from "./NewCardTile.tsx";
 
 const NewCardList = (props) => {
   const { cards, setCards, searchFailed } = props;
