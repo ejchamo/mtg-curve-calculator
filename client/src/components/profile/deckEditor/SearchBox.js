@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SearchBar from "./SearchBar";
-import StatsButton from "./StatsButton";
+import StatsButton from "./StatsButton.tsx";
 import NewCardList from "./NewCardList.tsx";
 import StatsList from "./StatsList.tsx";
 

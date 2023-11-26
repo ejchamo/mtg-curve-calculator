@@ -10,7 +10,6 @@ interface props {
 
 const StatsList: React.FC<props> = ({ cards }) => {
   const [stats, setStats] = React.useState<Stats>();
-  console.log(stats);
 
   useEffect(() => {
     getStats(cards).then((response) => {
