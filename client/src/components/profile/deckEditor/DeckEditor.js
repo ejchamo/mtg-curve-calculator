@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SearchBox from "./SearchBox";
-import CardBox from "./CardBox";
+import CardBox from "./CardBox.tsx";
 import getDeckById from "../../../services/getDeckById";
 
 const DeckEditor = (props) => {

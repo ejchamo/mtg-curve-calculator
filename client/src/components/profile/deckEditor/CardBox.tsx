@@ -1,13 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, Dispatch } from "react";
 import { Redirect } from "react-router-dom";
 import CardList from "./CardList.tsx";
-import saveDeck from "../../../services/saveDeck";
+import saveDeck from "../../../services/saveDeck.ts";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencil } from "@fortawesome/free-solid-svg-icons";
 import DeckNameForm from "./DeckNameForm.tsx";
+import { DeckType } from "../../../../typings/custom/deck";
+import { CardType } from "../../../../typings/custom/card";
 
-const CardBox = (props) => {
-  const { deck, setDeck, cards, setCards } = props;
+interface props {
+  deck: DeckType;
+  setDeck: Dispatch<DeckType>;
+  cards: CardType[];
+  setCards: Dispatch<CardType[]>;
+}
+
+const CardBox: React.FC<props> = ({ deck, setDeck, cards, setCards }) => {
   const [editingName, setEditingName] = useState(false);
   const [shouldRedirect, setShouldRedirect] = useState(false);
 
@@ -31,7 +39,7 @@ const CardBox = (props) => {
   const saveAndExit = async () => {
     const editedDeck = { ...deck, cards: { deck: cards } };
     const response = await saveDeck(editedDeck);
-    if (response.status === 200) {
+    if (response && response.status === 200) {
       setShouldRedirect(true);
     }
   };
