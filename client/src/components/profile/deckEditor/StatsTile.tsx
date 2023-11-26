@@ -4,7 +4,7 @@ import { StatType } from "../../../../typings/custom/stat";
 
 interface props {
   stat: StatType;
-  turn: number;
+  turn: string;
 }
 
 const StatsTile: React.FC<props> = ({ stat, turn }) => {
