@@ -1,4 +1,6 @@
-const searchCards = async (name) => {
+import { CardType } from "../../typings/custom/card";
+
+const searchCards = async (name: string) => {
   try {
     const response = await fetch(`/api/v1/newCards/${name}`);
     if (!response.ok) {
@@ -7,10 +9,12 @@ const searchCards = async (name) => {
       throw error;
     }
     const body = await response.json();
-    const cards = body.cards;
+    const cards: CardType[] = body.cards;
     return cards;
   } catch (err) {
-    console.error(`Error in fetch: ${err.message}`);
+    if (err instanceof Error) {
+      console.error(`Error in fetch: ${err.message}`);
+    }
   }
 };
 
