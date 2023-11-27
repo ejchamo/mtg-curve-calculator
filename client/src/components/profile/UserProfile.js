@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import getDecks from "../../services/getDecks";
-import ImportButton from "./ImportButton";
+import ImportButton from "./ImportButton.tsx";
 import DeckList from "./DeckList.tsx";
 import DeckOptions from "./DeckOptions.tsx";
 

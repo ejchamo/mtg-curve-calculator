@@ -10,7 +10,6 @@ interface props {
   setDecks: Dispatch<DeckType[]>;
   selectedDeck: string | null;
   setSelectedDeck: Dispatch<string | null>;
-  setImportSuccess: Dispatch<boolean | null>;
 }
 
 const DeckOptions: React.FC<props> = ({ selectedDeck, setSelectedDeck, decks, setDecks }) => {
