@@ -67,7 +67,7 @@ const SignInForm = () => {
   };
 
   if (shouldRedirect) {
-    location.href = "/profile";
+    location.href = "/";
   }
 
   return (
