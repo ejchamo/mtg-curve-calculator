@@ -1,4 +1,4 @@
-const getDeckById = async (deckId) => {
+const getDeckById = async (deckId: string) => {
   try {
     const response = await fetch(`/api/v1/decks/${deckId}`);
     if (!response.ok) {
@@ -9,7 +9,9 @@ const getDeckById = async (deckId) => {
     const body = await response.json();
     return body.deck;
   } catch (err) {
-    console.error(`Error in fetch: ${err.message}`);
+    if (err instanceof Error) {
+      console.error(`Error in fetch: ${err.message}`);
+    }
   }
 };
 

@@ -1,14 +1,30 @@
 import React, { useState, useEffect } from "react";
 import SearchBox from "./SearchBox.tsx";
 import CardBox from "./CardBox.tsx";
-import getDeckById from "../../../services/getDeckById";
+import getDeckById from "../../../services/getDeckById.ts";
+import { DeckType } from "../../../../typings/custom/deck";
+import { CardType } from "../../../../typings/custom/card";
 
-const DeckEditor = (props) => {
-  const [deck, setDeck] = useState({ id: "", name: "", cards: [], userId: "" });
-  const [cards, setCards] = useState([]);
+interface MatchParams {
+  id: string;
+}
+interface props {
+  computedMatch: {
+    params: MatchParams;
+  };
+}
+
+const DeckEditor: React.FC<props> = ({ computedMatch }) => {
+  const [deck, setDeck] = React.useState<DeckType>({
+    id: "",
+    name: "",
+    cards: { deck: [] },
+    userId: "",
+  });
+  const [cards, setCards] = React.useState<CardType[]>([]);
 
   useEffect(() => {
-    getDeckById(props.computedMatch.params.id).then((deckData) => {
+    getDeckById(computedMatch.params.id).then((deckData) => {
       setDeck(deckData);
       setCards(deckData.cards.deck);
     });

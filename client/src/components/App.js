@@ -9,7 +9,7 @@ import SignInForm from "./authentication/SignInForm";
 import TopBar from "./layout/TopBar";
 import AuthenticatedRoute from "./authentication/AuthenticatedRoute";
 import UserProfile from "./profile/UserProfile";
-import DeckEditor from "./profile/deckEditor/DeckEditor";
+import DeckEditor from "./profile/deckEditor/DeckEditor.tsx";
 import Home from "./homepage/Home.tsx";
 
 const App = (props) => {
