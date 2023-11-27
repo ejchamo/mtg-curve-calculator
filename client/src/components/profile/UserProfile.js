@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import getDecks from "../../services/getDecks";
 import ImportButton from "./ImportButton";
-import DeckList from "./DeckList";
+import DeckList from "./DeckList.tsx";
 import DeckOptions from "./DeckOptions";
 
 const UserProfile = (props) => {
