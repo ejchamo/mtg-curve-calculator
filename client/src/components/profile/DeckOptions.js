@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import deleteDeck from "../../services/deleteDeck";
 import exportDeck from "../../services/exportDeck";
-import getDeckById from "../../services/getDeckById";
+import getDeckById from "../../services/getDeckById.ts";
 
 const DeckOptions = (props) => {
   const { selectedDeck, setSelectedDeck, decks, setDecks } = props;

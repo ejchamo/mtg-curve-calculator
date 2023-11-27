@@ -1,13 +1,16 @@
 import React from "react";
 
-const StatsButton = (props) => {
-  const { showStats, setShowStats } = props;
+interface props {
+  showStats: boolean;
+  setShowStats: (status: boolean) => void;
+}
 
+const StatsButton: React.FC<props> = ({ showStats, setShowStats }) => {
   const changeStats = () => {
     setShowStats(!showStats);
   };
 
-  let option;
+  let option: string;
   if (showStats) {
     option = "Hide Stats";
   } else {

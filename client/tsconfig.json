@@ -13,6 +13,6 @@
     "target": "es5",
     "types": ["jest", "react"]
   },
-  "include": ["src/**/*", "test/**/*", "typings/custom/import-png.d.ts"],
+  "include": ["src/**/*", "typings/custom/import-png.d.ts", "typings/**/*"],
   "exclude": ["node_modules", "client/node_modules/"]
 }

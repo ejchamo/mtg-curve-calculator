@@ -1,23 +1,29 @@
-import React, { useState } from "react";
-import searchCards from "../../../services/searchCards";
+import React, { useState, Dispatch } from "react";
+import searchCards from "../../../services/searchCards.ts";
+import { CardType } from "../../../../typings/custom/card";
 
-const SearchBar = (props) => {
+interface props {
+  setNewCards: Dispatch<CardType[]>;
+  setSearchFailed: (status: boolean) => void;
+}
+
+const SearchBar: React.FC<props> = ({ setNewCards, setSearchFailed }) => {
   const [params, setParams] = useState("");
 
-  const handleInputChange = (event) => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setParams(event.target.value);
   };
 
-  const handleSearch = (event) => {
+  const handleSearch = (event: React.ChangeEvent<HTMLFormElement>) => {
     event.preventDefault();
     searchCards(params).then((response) => {
       if (response) {
         const returnedCards = response;
-        props.setNewCards(returnedCards);
-        props.setSearchFailed(false);
+        setNewCards(returnedCards);
+        setSearchFailed(false);
       } else {
-        props.setNewCards([]);
-        props.setSearchFailed(true);
+        setNewCards([]);
+        setSearchFailed(true);
       }
     });
   };

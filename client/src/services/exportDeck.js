@@ -1,4 +1,4 @@
-import getDeckById from "./getDeckById";
+import getDeckById from "./getDeckById.ts";
 
 const exportDeck = (deck) => {
   const cardsToExport = {};

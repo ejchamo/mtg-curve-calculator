@@ -1,4 +1,6 @@
-const saveDeck = async (newDeck) => {
+import { DeckType } from "../../typings/custom/deck";
+
+const saveDeck = async (newDeck: DeckType) => {
   try {
     const response = await fetch(`/api/v1/decks/${newDeck.id}`, {
       method: "PATCH",
@@ -9,7 +11,9 @@ const saveDeck = async (newDeck) => {
     });
     return response;
   } catch (err) {
-    console.error(`Error in fetch: ${err.message}`);
+    if (err instanceof Error) {
+      console.error(`Error in fetch: ${err.message}`);
+    }
   }
 };
 

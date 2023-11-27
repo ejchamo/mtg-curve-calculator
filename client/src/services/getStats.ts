@@ -1,4 +1,6 @@
-const getStats = async (deck) => {
+import { CardType } from "../../typings/custom/card";
+
+const getStats = async (deck: CardType[]) => {
   try {
     const response = await fetch("/api/v1/stats", {
       method: "POST",
@@ -10,7 +12,9 @@ const getStats = async (deck) => {
     const body = await response.json();
     return body;
   } catch (err) {
-    console.error(`Error in fetch: ${err.message}`);
+    if (err instanceof Error) {
+      console.error(`Error in fetch: ${err.message}`);
+    }
   }
 };
 

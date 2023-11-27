@@ -1,13 +1,17 @@
-import React, { useState } from "react";
-import SearchBar from "./SearchBar";
-import StatsButton from "./StatsButton";
-import NewCardList from "./NewCardList";
-import StatsList from "./StatsList";
+import React, { useState, Dispatch } from "react";
+import SearchBar from "./SearchBar.tsx";
+import StatsButton from "./StatsButton.tsx";
+import NewCardList from "./NewCardList.tsx";
+import StatsList from "./StatsList.tsx";
+import { CardType } from "../../../../typings/custom/card";
 
-const SearchBox = (props) => {
-  const { cards, setCards } = props;
+interface props {
+  cards: CardType[];
+  setCards: Dispatch<CardType[]>;
+}
 
-  const [newCards, setNewCards] = useState([]);
+const SearchBox: React.FC<props> = ({ cards, setCards }) => {
+  const [newCards, setNewCards] = React.useState<CardType[]>([]);
   const [showStats, setShowStats] = useState(false);
   const [searchFailed, setSearchFailed] = useState(false);
 
