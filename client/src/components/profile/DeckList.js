@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import DeckTile from "./DeckTile";
+import DeckTile from "./DeckTile.tsx";
 
 const DeckList = (props) => {
   const { selectedDeck, setSelectedDeck, importSuccess, setImportSuccess } = props;
