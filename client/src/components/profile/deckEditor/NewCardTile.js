@@ -17,7 +17,7 @@ const NewCardTile = (props) => {
 
   if (card.image_uris) {
     return (
-      <div className="new-card-tile" onClick={addCard}>
+      <div className="new-card-tile cell medium-3" onClick={addCard}>
         <img
           className={`new-card-image ${hoverClass}`}
           src={`${card.image_uris.normal}`}

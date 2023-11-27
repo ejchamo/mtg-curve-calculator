@@ -14,7 +14,7 @@ const NewCardList = (props) => {
   }
 
   return (
-    <div className="new-card-list">
+    <div className="new-card-list grid-x">
       {newCardTiles}
       {searchWarning}
     </div>

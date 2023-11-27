@@ -101,9 +101,6 @@ body {
 }
 
 .new-card-list {
-  display: flex;
-  flex-wrap: wrap;
-  overflow-x: auto;
   height: 70vh;
   margin: 10px;
   border-top: 1px solid #17313a;
@@ -112,13 +109,12 @@ body {
 .new-card-tile {
   margin: 10px;
   .new-card-image {
-    height: 225px;
+    height: auto;
     width: auto;
     border-radius: 15px;
   }
   .new-card-image:hover {
-    height: 400px;
-    z-index: 1;
+    transform: scale(1.25);
   }
 }
 
