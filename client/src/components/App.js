@@ -8,7 +8,7 @@ import RegistrationForm from "./registration/RegistrationForm";
 import SignInForm from "./authentication/SignInForm";
 import TopBar from "./layout/TopBar";
 import AuthenticatedRoute from "./authentication/AuthenticatedRoute";
-import UserProfile from "./profile/UserProfile";
+import UserProfile from "./profile/UserProfile.tsx";
 import DeckEditor from "./profile/deckEditor/DeckEditor.tsx";
 import Home from "./homepage/Home.tsx";
 

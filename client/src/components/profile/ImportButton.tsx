@@ -5,7 +5,6 @@ import { DeckType } from "../../../typings/custom/deck";
 interface props {
   decks: DeckType[];
   setDecks: Dispatch<DeckType[]>;
-  selectedDeck: string | null;
   setSelectedDeck: Dispatch<string | null>;
   importSuccess: boolean | null | undefined;
   setImportSuccess: Dispatch<boolean | null | undefined>;

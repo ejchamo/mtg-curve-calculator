@@ -1,5 +1,4 @@
 import React, { Dispatch } from "react";
-import { Link } from "react-router-dom";
 import { DeckType } from "../../../typings/custom/deck";
 
 interface props {
