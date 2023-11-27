@@ -1,16 +1,23 @@
-import React from "react";
+import React, { Dispatch } from "react";
 import { Link } from "react-router-dom";
-import deleteDeck from "../../services/deleteDeck";
-import exportDeck from "../../services/exportDeck";
+import deleteDeck from "../../services/deleteDeck.ts";
+import exportDeck from "../../services/exportDeck.ts";
 import getDeckById from "../../services/getDeckById.ts";
+import { DeckType } from "../../../typings/custom/deck";
 
-const DeckOptions = (props) => {
-  const { selectedDeck, setSelectedDeck, decks, setDecks } = props;
+interface props {
+  decks: DeckType[];
+  setDecks: Dispatch<DeckType[]>;
+  selectedDeck: string | null;
+  setSelectedDeck: Dispatch<string | null>;
+  setImportSuccess: Dispatch<boolean | null>;
+}
 
+const DeckOptions: React.FC<props> = ({ selectedDeck, setSelectedDeck, decks, setDecks }) => {
   const deleteOnClick = async () => {
-    const response = await deleteDeck(selectedDeck);
+    const response = await deleteDeck(selectedDeck!);
 
-    if (response.status === 200) {
+    if (response && response.status === 200) {
       const newDecks = decks.filter((deck) => {
         return deck.id !== selectedDeck;
       });
@@ -21,11 +28,11 @@ const DeckOptions = (props) => {
   };
 
   const exportOnClick = async () => {
-    const deck = await getDeckById(selectedDeck);
+    const deck: DeckType = await getDeckById(selectedDeck!);
     exportDeck(deck);
   };
 
-  let options;
+  let options: React.JSX.Element = <></>;
 
   if (selectedDeck) {
     options = (

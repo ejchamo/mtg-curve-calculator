@@ -1,7 +1,11 @@
-import getDeckById from "./getDeckById.ts";
+import { DeckType } from "../../typings/custom/deck";
 
-const exportDeck = (deck) => {
-  const cardsToExport = {};
+interface ExportType {
+  [cardName: string]: number;
+}
+
+const exportDeck = (deck: DeckType) => {
+  const cardsToExport: ExportType = {};
   const cardsInDeck = deck.cards.deck;
   cardsInDeck.forEach((card) => {
     if (cardsToExport[card.name]) {
