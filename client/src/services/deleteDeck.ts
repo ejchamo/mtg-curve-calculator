@@ -1,4 +1,4 @@
-const deleteDeck = async (deckId) => {
+const deleteDeck = async (deckId: string) => {
   try {
     const deletedDecks = await fetch(`/api/v1/decks/${deckId}`, {
       method: "DELETE",
@@ -9,7 +9,9 @@ const deleteDeck = async (deckId) => {
     });
     return deletedDecks;
   } catch (err) {
-    console.error(`Error in fetch: ${err.message}`);
+    if (err instanceof Error) {
+      console.error(`Error in fetch: ${err.message}`);
+    }
   }
 };
 export default deleteDeck;

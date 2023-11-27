@@ -1,4 +1,4 @@
-const importDeck = async (deckText) => {
+const importDeck = async (deckText: string) => {
   try {
     const response = await fetch(`/api/v1/decks/import`, {
       method: "POST",
@@ -8,8 +8,10 @@ const importDeck = async (deckText) => {
       body: JSON.stringify({ deckText }),
     });
     return response;
-  } catch (error) {
-    console.error(`Error in fetch: ${error.message}`);
+  } catch (err) {
+    if (err instanceof Error) {
+      console.error(`Error in fetch: ${err.message}`);
+    }
   }
 };
 

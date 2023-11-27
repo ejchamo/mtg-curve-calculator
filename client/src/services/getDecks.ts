@@ -9,7 +9,9 @@ const getDecks = async () => {
     const body = await response.json();
     return body;
   } catch (err) {
-    console.error(`Error in fetch: ${err.message}`);
+    if (err instanceof Error) {
+      console.error(`Error in fetch: ${err.message}`);
+    }
   }
 };
 

@@ -1,17 +1,30 @@
-import React, { useState } from "react";
-import importDeck from "../../services/importDeck";
+import React, { Dispatch } from "react";
+import importDeck from "../../services/importDeck.ts";
+import { DeckType } from "../../../typings/custom/deck";
 
-const ImportButton = (props) => {
-  const { decks, setDecks, setSelectedDeck, importSuccess, setImportSuccess } = props;
+interface props {
+  decks: DeckType[];
+  setDecks: Dispatch<DeckType[]>;
+  setSelectedDeck: Dispatch<string | null>;
+  importSuccess: boolean | null | undefined;
+  setImportSuccess: Dispatch<boolean | null | undefined>;
+}
 
+const ImportButton: React.FC<props> = ({
+  decks,
+  setDecks,
+  setSelectedDeck,
+  importSuccess,
+  setImportSuccess,
+}) => {
   const handleCopy = async () => {
     setImportSuccess(undefined);
     try {
       const clipboardText = await navigator.clipboard.readText();
       const response = await importDeck(clipboardText);
-      if (response.status === 201) {
+      if (response && response.status === 201) {
         const body = await response.json();
-        const newDeck = body.newDeck;
+        const newDeck: DeckType = body.newDeck;
         setDecks([...decks, newDeck]);
         setImportSuccess(true);
         setSelectedDeck(null);
@@ -19,12 +32,14 @@ const ImportButton = (props) => {
         setImportSuccess(false);
         setSelectedDeck(null);
       }
-    } catch (error) {
-      console.error("Error copying text to clipboard:", error);
+    } catch (err) {
+      if (err instanceof Error) {
+        console.error(`Error in fetch: ${err.message}`);
+      }
     }
   };
 
-  let importStatus;
+  let importStatus: React.JSX.Element = <></>;
 
   if (importSuccess) {
     importStatus = <div className="import-status"> import successfully loaded</div>;

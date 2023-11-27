@@ -1,10 +1,15 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { Dispatch } from "react";
+import { DeckType } from "../../../typings/custom/deck";
 
-const DeckTile = (props) => {
-  const { deck, selectedDeck, setSelectedDeck, setImportSuccess } = props;
+interface props {
+  deck: DeckType;
+  selectedDeck: string | null;
+  setSelectedDeck: Dispatch<string>;
+  setImportSuccess: Dispatch<boolean | null>;
+}
 
-  let selectedStatus;
+const DeckTile: React.FC<props> = ({ deck, selectedDeck, setSelectedDeck, setImportSuccess }) => {
+  let selectedStatus: string | undefined;
 
   if (deck.id === selectedDeck) {
     selectedStatus = "selected-deck";
