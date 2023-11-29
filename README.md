@@ -23,17 +23,17 @@ After edits are made a user may save their deck and export it to the online game
 
 - After locally cloning the repository, run
 
-```
-$ yarn install
-```
+  ```
+  $ yarn install
+  ```
 
 while in the root directory to install dependencies.
 
 - After installing, run
 
-```
-$ createdb mtg-curve-calculator_development
-```
+  ```
+  $ createdb mtg-curve-calculator_development
+  ```
 
 to create the PostgreSQL database.
 
@@ -44,7 +44,7 @@ to create the PostgreSQL database.
   $ yarn run migrate:latest
   ```
 
-  to create the database schema.
+to create the database schema.
 
 - After creating the schema, run
   ```
