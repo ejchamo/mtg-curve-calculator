@@ -1,7 +1,9 @@
 import express from "express";
 import passport from "passport";
-import { User } from "../../../models/index.js";
+import { User, Deck } from "../../../models/index.js";
 import { ValidationError } from "objection";
+import testDeck1 from "../../../db/seeders/testDeckData/testDeck1.js";
+import testDeck2 from "../../../db/seeders/testDeckData/testDeck2.js";
 
 const usersRouter = new express.Router();
 
@@ -9,6 +11,19 @@ usersRouter.post("/", async (req, res) => {
   const { email, password, passwordConfirmation } = req.body;
   try {
     const persistedUser = await User.query().insertAndFetch({ email, password });
+
+    //giving new users example decks to see app features without having to import a deck
+    await Deck.query().insertAndFetch({
+      userId: persistedUser.id,
+      name: "Example Deck 1",
+      cards: testDeck1,
+    });
+    await Deck.query().insertAndFetch({
+      userId: persistedUser.id,
+      name: "Example Deck 2",
+      cards: testDeck2,
+    });
+
     return req.login(persistedUser, () => {
       return res.status(201).json({ user: persistedUser });
     });
