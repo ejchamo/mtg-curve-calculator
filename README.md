@@ -21,17 +21,42 @@ After edits are made a user may save their deck and export it to the online game
 
 ### Installing / Executing
 
-- After locally cloning the repository, run `$ yarn install` while in the root directory to install dependencies.
-- After installing, run `$ createdb mtg-curve-calculator_development` to create the PostgreSQL database.
+- After locally cloning the repository, run
+
+```
+$ yarn install
+```
+
+while in the root directory to install dependencies.
+
+- After installing, run
+
+```
+$ createdb mtg-curve-calculator_development
+```
+
+to create the PostgreSQL database.
+
 - After creating the databse, run
+
   ```
   $ cd server
   $ yarn run migrate:latest
   ```
-  to create the database schema
+
+  to create the database schema.
+
 - After creating the schema, run
   ```
   $ cd ..
   $ yarn run dev
   ```
   to start the app. Then visit http://localhost:3000/ via a browser to visit the app.
+
+### Usage
+
+- To use the app a user must be logged in.
+- From the profile page a user may import decks from MTG Arena.
+- From the profile page, after clicking on a deck the user should see options appear on what they can do with the deck, such as clicking on the `Edit Deck/ Run Stats` button
+- After clicking on the `Edit Deck/ Run Stats`, a user should render the deck editor page
+- From the deck editor page a user may run/hide stats for the deck, remove cards from the deck by clicking on the card names, or add cards to the deck by searching for card names and clicking on the images that load
