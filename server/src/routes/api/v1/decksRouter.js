@@ -49,7 +49,7 @@ decksRouter.patch("/:id", async (req, res) => {
       res.status(500).json({ errors: err });
     }
   } else {
-    res.status(400).json({ error: "not authorized to edit" });
+    res.status(401).json({ error: "not authorized to edit" });
   }
 });
 
@@ -72,10 +72,10 @@ decksRouter.post("/import", async (req, res) => {
       });
       return res.status(201).json({ newDeck });
     } else {
-      throw new TypeError("incorrect import format");
+      throw new Error("incorrect import format");
     }
   } catch (error) {
-    return res.status(500).json({ errors: error });
+    return res.status(500).json({ errors: error.message });
   }
 });
 

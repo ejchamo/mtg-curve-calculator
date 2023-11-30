@@ -33,6 +33,12 @@ const find = async ({ modelName, conditions = {} }) => {
   return result;
 };
 
+const findFirst = async ({ modelName = {} }) => {
+  const result = await modelList[modelName].query().first();
+  await connection.client.pool.release();
+  return result;
+};
+
 const deleteRecords = async ({ modelName, conditions = {} }) => {
   const result = await modelList[modelName].query().delete().where(conditions);
   await connection.client.pool.release();
@@ -41,6 +47,7 @@ const deleteRecords = async ({ modelName, conditions = {} }) => {
 
 module.exports = {
   find,
+  findFirst,
   deleteRecords,
   insert,
   truncate,
