@@ -1,4 +1,4 @@
-const { insert, truncate, find, deleteRecords, update } = require("./db");
+const { insert, truncate, find, deleteRecords, update, findFirst } = require("./db");
 
 /// <reference types="cypress" />
 /**
@@ -14,6 +14,9 @@ module.exports = (on, config) => {
     },
     "db:find"({ modelName, conditions }) {
       return find({ modelName, conditions });
+    },
+    "db:findFirst"({ modelName }) {
+      return findFirst({ modelName });
     },
     "db:delete"({ modelName, conditions }) {
       return deleteRecords({ modelName, conditions });
