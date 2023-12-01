@@ -18,6 +18,7 @@ After edits are made a user may save their deck and export it to the online game
 
 - Node version ^16.18
 - PostgresSql
+- Yarn 1.22.19
 
 ### Installing / Executing
 
