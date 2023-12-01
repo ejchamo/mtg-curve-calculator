@@ -102,6 +102,7 @@ body {
 
 .new-card-list {
   justify-content: center;
+  overflow-x: auto;
   height: 70vh;
   margin: 10px;
   border-top: 1px solid #17313a;
