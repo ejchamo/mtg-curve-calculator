@@ -20,7 +20,7 @@ const NewCardList: React.FC<props> = ({ newCards, cards, setCards, searchFailed 
   }
 
   return (
-    <div className="new-card-list">
+    <div className="new-card-list grid-x">
       {newCardTiles}
       {searchWarning}
     </div>
