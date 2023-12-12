@@ -56,6 +56,8 @@ decksRouter.patch("/:id", async (req, res) => {
 decksRouter.post("/import", async (req, res) => {
   try {
     const { deckText } = req.body;
+    console.log("reqbody", req.body);
+    console.log("deckText", deckText);
     if (deckText.includes("Deck\n")) {
       const deckObject = MtgExportToImport.mtgExportToObject(deckText);
       const importableDeck = await MtgExportToImport.DeckObjectToImport(deckObject);
