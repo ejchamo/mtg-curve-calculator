@@ -2,6 +2,7 @@ import express from "express";
 import { User, Deck } from "../../../models/index.js";
 import DeckSerializer from "../../../serializers/DeckSerializer.js";
 import MtgExportToImport from "../../../scripts/MtgExportToImport.js";
+import windowsTranslate from "../../../scripts/windowsTranslate.js";
 
 const decksRouter = new express.Router();
 
@@ -56,6 +57,9 @@ decksRouter.patch("/:id", async (req, res) => {
 decksRouter.post("/import", async (req, res) => {
   try {
     const { deckText } = req.body;
+    if (deckText.includes("Deck\r\n")) {
+      deckText = deckText.replaceAll("\r\n", "\n");
+    }
     if (deckText.includes("Deck\n")) {
       const deckObject = MtgExportToImport.mtgExportToObject(deckText);
       const importableDeck = await MtgExportToImport.DeckObjectToImport(deckObject);
