@@ -8,7 +8,7 @@ A user may then edit their deck and export to the virtual game MTG Arena.
 
 Mtg-Curve-Calculator is a monolith app with Express backend and Typescript React frontend in NodeJS utilizing a PostgreSQL database.
 The app imports a user's deck from the online game Magic The Gathering Arena and provides stats about card playability.
-The stats are calculated by performing simulations with 0(n \* m) time complexity where n is the number of simulations (10,000) and m is the number of cards in the deck(~60); results instantly renders.
+The stats are calculated by performing simulations with 0(n \* m) time complexity where n is the number of simulations (10,000) and m is the number of cards in the deck(~60); results instantly render.
 The app has integrated the Scryfall API to search for cards to add to a user’s deck.
 After edits are made a user may save their deck and export it to the online game Magic The Gathering Arena.
 
