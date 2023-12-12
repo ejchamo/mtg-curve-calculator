@@ -56,7 +56,7 @@ decksRouter.patch("/:id", async (req, res) => {
 
 decksRouter.post("/import", async (req, res) => {
   try {
-    const { deckText } = req.body;
+    let { deckText } = req.body;
     if (deckText.includes("Deck\r\n")) {
       deckText = deckText.replaceAll("\r\n", "\n");
     }
