@@ -20,7 +20,7 @@ const CardBox: React.FC<props> = ({ deck, setDeck, cards, setCards }) => {
   const [shouldRedirect, setShouldRedirect] = useState(false);
 
   let deckName = (
-    <div>
+    <div className="deck-name">
       <FontAwesomeIcon
         icon={faPencil}
         className="edit-icon"
