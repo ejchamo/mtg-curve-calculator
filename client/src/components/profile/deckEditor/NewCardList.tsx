@@ -16,7 +16,7 @@ const NewCardList: React.FC<props> = ({ newCards, cards, setCards, searchFailed 
 
   let searchWarning: React.JSX.Element = <></>;
   if (searchFailed) {
-    searchWarning = <div>search failed: try searching by card name</div>;
+    searchWarning = <div className="search-warning">search failed: try searching by card name</div>;
   }
 
   return (
